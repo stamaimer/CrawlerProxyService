@@ -1,2 +1,7 @@
 venv
+.idea
+*.pyc
+*.sqlite
 instance
+test.html
+migrations
