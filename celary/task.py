@@ -41,7 +41,7 @@ def get_addr(src, regex):
 
         try:
 
-            response = requests.get("http://www.163.com", timeout=3, proxies={"http": addr})
+            response = requests.get("http://www.163.com", timeout=1, proxies={"http": addr})
 
             print response.elapsed.total_seconds()
 
@@ -73,7 +73,13 @@ def poll():
 
         regex = proxy_site.regex
 
-        src = retrieve(url)
+        try:
+
+            src = retrieve(url)
+
+        except requests.ConnectionError:
+
+            continue
 
         get_addr(src, regex)
 

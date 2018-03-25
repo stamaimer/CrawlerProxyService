@@ -9,3 +9,19 @@
 
 """
 
+from flask import Blueprint
+
+# from celary.task import poll
+
+
+main = Blueprint("main", __name__)
+
+
+# @main.route('/', methods=["GET"])
+# def index():
+#
+#     r = poll.delay()
+#
+#     return r.state, 200
+
+
